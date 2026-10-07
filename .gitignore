@@ -1,0 +1,27 @@
+# Secrets: never commit. This repo is public.
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# Local data and logs
+data/
+logs/
+*.log
+*.sqlite
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

@@ -1,0 +1,40 @@
+# Premarket Gauntlet thresholds.
+# Every number here is a starting guess. Tune against the outcome log (Phase 5).
+
+[schedule]
+timezone = "America/New_York"
+run_times = ["08:00", "09:15"]
+
+[gap]
+# Absolute gap vs prior close, percent. Gaps up and down both qualify.
+min_abs_pct = 3.0
+
+[filters]
+min_price = 5.0
+# Bid/ask spread as a percent of the mid price.
+max_spread_pct = 0.5
+# Pass if EITHER volume test passes.
+min_premarket_volume = 100000
+min_relative_volume = 3.0
+min_float_shares = 10000000
+# What to do when a data point is missing: "reject" (fail closed) or "pass".
+on_missing_float = "reject"
+on_missing_quote = "reject"
+# Quotes older than this are treated as missing.
+max_quote_age_seconds = 120
+
+[catalyst]
+lookback_hours = 18
+# Candidates with no identifiable catalyst are kept but flagged, not dropped.
+require_catalyst = false
+
+[ranking]
+top_n = 5
+
+# Must sum to 1.0.
+[ranking.weights]
+gap_size = 0.15
+relative_volume = 0.25
+catalyst_quality = 0.30
+liquidity = 0.15
+room_to_level = 0.15
