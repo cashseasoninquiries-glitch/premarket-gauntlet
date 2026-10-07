@@ -1,7 +1,8 @@
 # Premarket Gauntlet
 
 A premarket scanner that turns "what gapped overnight?" into a short, ranked,
-explained watchlist. Built as a read-only feature of the Apex Executions Cockpit.
+explained watchlist. Built as a read-only feature of the Apex Executions Engine
+cockpit (the engine's own dashboard). It is unrelated to the separate Cockpit project.
 
 ```
 all US stocks
@@ -32,13 +33,13 @@ Progress is tracked in the [GitHub issues](../../issues), one per phase.
 
 | Phase | What | Status |
 |---|---|---|
-| 0 | Foundation: repo, config, schema, validation | Done |
+| 0 | Foundation: repo, config, schema, validation | Code done; schema + .env pending |
 | 1 | Gap scan: universe + premarket price vs prior close | Not started |
 | 2 | Hard filters + rejection log | Not started |
 | 3 | Catalyst lookup: news, earnings, analyst actions | Not started |
 | 4 | LLM catalyst classification | Not started |
 | 5 | Ranking + outcome logging | Not started |
-| 6 | Cockpit panel, scheduler, voice brief | Not started |
+| 6 | Apex Engine cockpit panel + scheduler | Not started |
 | 7 | Hardening: halts, corporate actions, rate limits, outages | Not started |
 
 ## Layout
